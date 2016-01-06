@@ -1,0 +1,16 @@
+the-app .navbar-list {
+    list-style: none;
+}
+
+the-app .navbar-item {
+    position: relative;
+    float: left;
+}
+
+the-app .navbar-link {
+    text-decoration: none;
+    margin-right: 30px;
+    font-weight: 600;
+    font-size: 11px;
+    color: #333;
+}
