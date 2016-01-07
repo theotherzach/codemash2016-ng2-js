@@ -1,9 +1,16 @@
 <nav>
   <div class="container">
     <ul class="navbar-list">
-      <li class="navbar-item"><a class="navbar-link" href="">Home</a></li>
-      <li class="navbar-item"><a class="navbar-link" href="">Hello/ Goodbye World</a></li>
+      <li class="navbar-item">
+        <a class="navbar-link" [routerLink]="['Home']">Home</a>
+      </li>
+      <li class="navbar-item">
+        <a class="navbar-link" [routerLink]="['HelloGoodbye']">Hello/ Goodbye World</a>
+      </li>
     </ul>
   </div>
 </nav>
-<h1 (click)="actuallyGoodbye()">{{message}}</h1>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

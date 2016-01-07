@@ -1,20 +1,24 @@
 ;(function () {
   'use strict'
 
-  window.app = {}
+  var AppComponent = ng.core
+  .Component({
+    selector: 'the-app',
+    templateUrl: '/app/app.html',
+    directives: [
+      app.HelloGoodbyeComponent,
+      ng.router.ROUTER_DIRECTIVES
+    ]
+  })
+  .Class({
+    constructor: function () {}
+  })
 
-  app.AppComponent = ng.core.
-    Component({
-      selector: 'the-app',
-      templateUrl: '/app/app.html'
-    }).
-    Class({
-      constructor: function () {
-        this.message = 'Hi there, world.'
+  var decorateWithRouteConfig = ng.router.RouteConfig([
+    { path: '/', component: app.HomeComponent, as: 'Home' },
+    { path: '/hello-goodbye', component: app.HelloGoodbyeComponent, as: 'HelloGoodbye' }
+  ])
 
-        this.actuallyGoodbye = function () {
-          this.message = 'Bye bye, world.'
-        }
-      }
-    })
+  AppComponent = decorateWithRouteConfig(AppComponent)
+  window.app.AppComponent = AppComponent
 }());
