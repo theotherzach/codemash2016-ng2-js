@@ -1,0 +1,3 @@
+# Codemash 2016 Angular 2 in Plain JavaScript
+
+[video playlist](https://www.youtube.com/watch?v=Ahv0fL9LgAg&list=PL34kmYFWn8JZ7V8v7NSYc58htrAgHYkcJ)
