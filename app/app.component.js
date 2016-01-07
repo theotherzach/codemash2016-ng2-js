@@ -6,7 +6,6 @@
     selector: 'the-app',
     templateUrl: '/app/app.html',
     directives: [
-      app.HelloGoodbyeComponent,
       ng.router.ROUTER_DIRECTIVES
     ]
   })
@@ -14,10 +13,19 @@
     constructor: function () {}
   })
 
-  var decorateWithRouteConfig = ng.router.RouteConfig([
-    { path: '/', component: app.HomeComponent, as: 'Home' },
-    { path: '/hello-goodbye', component: app.HelloGoodbyeComponent, as: 'HelloGoodbye' }
-  ])
+  var decorateWithRouteConfig = ng.router.RouteConfig([{
+    path: '/',
+    component: app.HomeComponent,
+    as: 'Home'
+  }, {
+    path: '/sortable-grid-example',
+    component: app.SortableGridExampleComponent,
+    as: 'SortableGridExample'
+  }, {
+    path: '/hello-goodbye',
+    component: app.HelloGoodbyeComponent,
+    as: 'HelloGoodbye'
+  }])
 
   AppComponent = decorateWithRouteConfig(AppComponent)
   window.app.AppComponent = AppComponent
