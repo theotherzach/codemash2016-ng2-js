@@ -1,1 +1,52 @@
 <h1>Angular 2 Sortable Grid Example</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th (click)="setSort('name')">
+        Name
+        <span *ngIf="sortBy === 'name'"
+          class="u-pull-right">
+          v
+        </span>
+      </th>
+      <th (click)="setSort('capital')">
+        Capital
+        <span *ngIf="sortBy === 'capital'"
+          class="u-pull-right">
+          v
+        </span>
+      </th>
+      <th (click)="setSort('population')">
+        Population
+        <span *ngIf="sortBy === 'population'"
+          class="u-pull-right">
+          v
+        </span>
+      </th>
+      <th (click)="setSort('region')">
+        Region
+        <span *ngIf="sortBy === 'region'"
+          class="u-pull-right">
+          v
+        </span>
+      </th>
+      <th (click)="setSort('area')">
+        Area
+        <span *ngIf="sortBy === 'area'"
+          class="u-pull-right">
+          v
+        </span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="#country of sortedCountries(countries, sortBy)">
+      <td>{{country.name}}</td>
+      <td>{{country.capital}}</td>
+      <td>{{country.population}}</td>
+      <td>{{country.region}}</td>
+      <td>{{country.area}}</td>
+    </tr>
+  </tbody>
+</table>
